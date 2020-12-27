@@ -16,7 +16,7 @@ generate_ppm_data :: proc(image: Image, data: ^Data){
         for x in 0..<image.width{
             color := get_pixel(x, y, image);
             rgba: [4]u8 = transmute([4]u8)color;
-            append(&data.buf, rgba[0], rgba[1], rgba[2]);
+            append(&data.buf, rgba[3], rgba[2], rgba[1]);
         }
     }
 }
